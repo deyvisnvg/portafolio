@@ -1,0 +1,753 @@
+/*
+Configuración de la vista
+HTML5 introdujo un método para permitir que los diseñadores web tomen el control de la ventana gráfica, 
+a través de la etiqueta <meta> .
+
+Debe incluir el siguiente elemento de vista <meta> en todas sus páginas web:
+<meta name=“viewport” content=“width=device-width, initial-scale=1.0”>
+
+Un elemento de vista <meta> le da al navegador instrucciones sobre cómo controlar las dimensiones y la escala de la página.
+
+La parte width=device-width establece el ancho de la página para seguir el ancho de pantalla del dispositivo (que variará dependiendo del dispositivo).
+La parte de initial-scale=1.0 establece el nivel de zoom inicial cuando el navegador carga la página por primera vez.
+
+
+Unidades relativas de medida:
+
+Porcentaje: longitud referente al tamaño de los elementos padre
+em: unidad relativa al tamaño de fuente especificada más cercano
+rem: unidad relativa al tamaño de fuente especificada en el ancestro más lejano (html o body)
+vw / vh: unidad relativa porcentual con respecto al viewport
+*/
+/*
+Media queries
+El media queries es un módulo de css que hace posible al responsive design, 
+éste existe desde el 2010 y se encarga de adaptar la representación del 
+contenido a características del dispositivo.
+
+@media media type and (condicion){}
+Se compone de un media type y una o más condiciones.
+
+@media screen and(max-width:768px){}
+Todas las pantallas con un ancho inferior o igual a 768px cumplen esta condición.
+
+@media screen and(max-width:768px) and (min-width:480px){}
+Todas las pantallas con un ancho de 480px hasta 768px cumple esta condición.
+
+MobileFirst
+@media screen and(min-width: 320px){}
+@media screen and(min-width: 480px){}
+@media screen and(min-width: 768px){}
+@media screen and(min-width: 1024px){}
+min-width = desde
+@media screen and(max-width: 1024px){}
+@media screen and(max-width: 768px){}
+@media screen and(max-width: 480px){}
+@media screen and(max-width: 320px){}
+max-width = hasta
+
+max-width = hasta
+min-width = desde
+
+all | Valor por defecto, usada por todos los tipos de media
+print | Utilizado para impresoras
+screen | Se utiliza para pantallas de ordenador, tabletas, teléfonos inteligentes, etc.
+speech | Se utiliza para lectores de pantalla que “lee” la página en voz alta
+@media all and (condición) {}
+@media print and (condición) {}
+@media screen and (condición) {}
+@media speech and (condición) {}
+*/
+
+
+/*selector de etiqueta header -section - article - nav*/
+/*
+1. Selector de etiqueta: refiere a etiquetas HTML, como el ejemplo de la imagen.
+2. Selector descendiente: refiere a etiquetas HTML de forma hereditaria.
+3. Selector de id: ("#") refiere a atributos id de etiquetas HTML.
+4. Selector de class (clase): (".") refiere a atributos class de etiquetas HTML.
+*/
+/*reglas
+selectores
+declaraciones
+propiedades 
+valor*/
+/*  */
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?d44amp');
+  src:  url('../fonts/icomoon.eot?d44amp#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?d44amp') format('truetype'),
+    url('../fonts/icomoon.woff?d44amp') format('woff'),
+    url('../fonts/icomoon.svg?d44amp#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu:before {
+  content: "\e900";
+}
+
+
+
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    /*font-family: 'PT Sans', sans-serif;*/
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Fjalla One', sans-serif; /* fuente de letra */
+    font-weight: normal; /* espesor de la fuente, negrita : bold */
+}
+
+h1{
+    font-size: 40px; /* tamaño de la fuente */
+    line-height: 1.5; /* espaciado entre filas de la fuente */
+    letter-spacing: -.2px; /* para modificar el espacio entre letras */
+  /*  text-transform: uppercase; /* para transformar la fuente (mayusculas, minuculas, etc) */
+  /*  text-decoration: dashed /* para moodificar la decoración de la fuente y para el subrayado de la fuente */
+    color: white;
+
+    /* margin:top right bottom left; */
+    /* margin: 100px 50px 70px 30px; */
+    margin: 0;
+    /* margin: 10px 10px; --> margin: top bottom / left right*/
+
+}
+h1 strong {
+    color: #026fff; /* Color de fuente celeste */
+}
+
+h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #026fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 30px;
+}
+
+.hero {
+    height: 300px;
+    background-color: #2d2d2d;
+    /*background-image: url('../images/hero.jpg'); /* para agregar una imagen de fondo */
+    /*background-size: 500px, 300px; /* para modificar el tamaño del background asignado */
+    /*background-repeat: no-repeat; /* para modificar la repetición del backgound asignado */
+    /*background-position-x: right; /* para modificar la posición del bakground asignado */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+  object-fit: cover;
+}
+
+.portfolio {
+    background-color: #fafafa;
+    padding: 20px;
+}
+
+/* La forma resumida que más van a ver respecto a los bordes es:
+Ejemplo:
+border: 3px solid black;
+Esta es la forma resumida y la que van a usar en la mayoría de los casos.
+También el border radius lo pueden usar en porcentajes tanto como en pixeles.
+
+border: 50%;
+Así harán un circulo.
+
+y por último si sólo quieren modificar una esquina del borde es siendo especifico en la zona que se desea modificar. Ejemplo:
+border-top-left-radius: 30%; */
+
+.project {
+    /* border-top: 10px solid red;
+    border-right: 10px solid green;
+    border-left: 10px solid blue;
+    border-bottom: 10px solid yellow; */
+
+    /* border-color: #027fff;
+    border-width: 15px;
+    border-style: solid; */ /* Para establecer un solo color de borde a todos los bordes */
+
+    /*border-top-color: red;
+    border-top-width: 15px;
+    border-top-style: solid; /* Para establecer un color de borde a una posición en espe */ 
+    border: 1px solid #dadada;
+    border-radius: 10px;
+/*    border-top-left-radius: 50px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 10px; */ /* Definir borde en diferentes posiciones */
+    /* es el margen que hay desde un elemento hasta los que tenga al lado. */
+    margin: 5px;
+    /* margin-bottom: 15px; */
+
+    /* La propiedad CSS padding establece el espacio de relleno requerido por todos los lados de un elemento.
+    El área de padding es el espacio entre el contenido del elemento y su borde (border) no se permiten valores negativos.
+    La propiedad padding es un atajo para evitar la asignación de cada lado por separado (padding-top, padding-right, padding-bottom, padding-left). */
+    padding: 5px;
+    background: #dadada;
+
+    /* box-sizing: border-box; /* para mantener el tamaño de la caja independiente del padding o border */
+
+    /* box-shadow: right bottom opacidad-sombra grosor-sombra; */
+    /* box-shadow: 4px 4px 8px 0px #95afc0; */
+    width: 490px;
+}
+
+.project-details{
+    width: 40%;
+    /* margin: 10px 10px; */ /*  permite centrar, separar elementos, colocar márgenes de diferentes valores (arriba, derecha, abajo e izquierda) */
+}
+
+.project-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+}
+
+.project-title {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    background: #dadada;
+}
+
+.project-course,
+.project-date,
+.project-url {
+    margin: 10px 0;
+}
+
+.project-description {
+    font-size: 15px;
+    text-align: justify;
+}
+
+.project strong {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.project-imageContainer{
+    width: 58%;
+}
+
+.project-imageContainer img {
+    max-width: 100%;
+}
+
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* quita la numeración del li */
+    height: inherit;
+}
+
+.header {
+    background-color: #2d2d2d; /* para agregar un color de fondo */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    flex-wrap: wrap;
+}
+
+.header a {
+    color: white; /*  */
+    text-decoration: none; /* Se usa para eliminar o adherir subrayado a un elemento de tipo texto. <a></a> */
+    /* height: inherit; */
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    height: initial;
+    margin: 14px 4px;
+}
+/* 
+.header a:hover {
+    background: #026fff;
+} */
+
+.header .menu {
+    height: inherit;
+}
+
+.header ol {
+    display: flex;
+    height: inherit;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+.footer {
+    background: #1d252c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer img {
+    width: 70px;
+    vertical-align: middle;
+}
+
+.footer a {
+    color: white;
+}
+
+.event-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.event {
+    /*border: 1px solid red;*/
+    margin: 1%;
+    width: 48%;
+    flex-shrink: 0;
+    border-radius: 10px; /* border redondo */
+    overflow: hidden; /* para ocultar la esquina de la imagen y se muestre redondeado según al border-radius definido */
+    background-color: #f4fbff;
+    flex-wrap: wrap;
+
+}
+
+.event img {
+    width: 480px;
+    height: 290px;
+    object-fit: cover; /* para que la imagen muestre su tamaño normal por más que su height sea menor */
+    object-position: center; /* para centrar una imagen */
+}
+
+.event-list-title {
+    margin-left: 20px;
+}
+
+.event-detail {
+    margin: 20px 40px;
+    margin-top: -70px; /* subir el contenedor por el eje negativo */
+    background-color: white;
+    position: relative; /* para mostrar el contenedor completo por encima del otro */
+    padding: 20px;
+    text-align: center;
+}
+
+.event-description {
+    text-align: left;
+}
+
+.event-url {
+    color: #056fff;
+    border: 1px solid;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.contact {
+    background-color: #056fff;
+    color: white;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* .social {
+} */
+
+.social-link {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    background-size: 50px 50px;
+}
+
+.social-link.twitter {
+    background-image: url('../images/twitter.svg');
+}
+
+.social-link.facebook {
+    background-image: url('../images/facebook.svg');
+}
+
+.social-link.github {
+    background-image: url('../images/github.svg');
+}
+
+.social-link.instagram {
+    background-image: url('../images/instagram.svg');
+}
+
+.form-email input {
+    border-color: gray;
+    border-style: solid;
+    padding: 10px 20px 10px 25px;
+    border-radius: 5px;
+    /* El formato SVG (Scalable Vectors Grafics) es aquel el cual no importa cuanto le modifique su tamaño,
+     este no va perder su resolución. Siendo esto porque usa vectores en vez de pixeles para dibujar en pantalla. */
+    background-image: url('../images/envelope.svg'); 
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 5px;
+}
+
+.form-email button{
+    display: block;
+    background: transparent;
+    color: white;
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 5px;
+}
+
+.form-email h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+    /*border: 1px solid gray;*/
+    max-width: 1030px;
+    flex: 1; /* toma todo el ancho disponible que tengas dentro del elemento */
+    margin: auto auto;
+    display: flex;
+    justify-content: inherit;
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: wrap;
+}
+
+ol li a:hover {
+  background-color: #40739e;
+}
+
+.burger-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .8); /* rgba(rojo,verde,azul,opacidad) - rgba(0-255,0-255,0-255, 0-1) */
+    display: none;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 4;
+    top: 5px;
+    left: 5px;
+    color: white;
+}
+
+.header ol li .border {
+  height: initial;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin: 14px 4px 
+}
+
+/* Desktop First que empieze desde el MQ mas grande */
+
+@media screen and (max-width: 1023px){
+
+    .container {
+        padding: 0 1em;
+    }
+
+    .hero {
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        padding: 2em;
+    }
+    .hero-image {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    h1 {
+        font-size: 2em;
+        z-index: 2;
+    }
+}
+
+.html-video {
+    width: 100%;
+    height: auto;
+}
+
+.youtube-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.flexible-video {
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    background: blue;
+    position: relative;
+}
+
+@media screen and (max-width: 767px){
+
+    h2 {
+        font-size: 1.2em;
+        margin: .6em;
+    }
+
+    .burger-button {
+        display: block;
+    }
+
+    .header {
+        display: block;
+        height: auto;
+    }
+
+    .header ol {
+        display: initial;
+    }
+
+    .header ol li {
+        height: 50px;
+        text-align: center;
+    }
+
+    .header ol li a {
+        justify-content: center;
+        font-size: 1.2em;
+    }
+
+    .project {
+        display: block;
+    }
+
+    .project-imageContainer{
+        width: auto;
+        text-align: center;
+    }
+
+    .project-details {
+        width: auto;
+        /*font-size: 16px;*/
+    }
+
+    .project-course,
+    .project-date,
+    .project-url {
+        margin: .4em 0;
+    }
+
+    .project-title {
+        font-size: 1.5em;
+        margin-bottom: .3em;
+    }
+
+    .project-url {
+        font-size: 1em;
+    }
+  
+    .project-course {
+        font-size: .7em;
+    }
+
+    .project-date {
+        font-size: 1em;
+    }
+
+    .project-description {
+        font-size: 1em;
+    }
+
+    .event {
+        width: auto;
+        flex-shrink: initial;
+    }
+
+    .event img {
+        width: 100%;
+    }
+
+    .social-link {
+    width: 43px;
+    height: 43px;
+    margin: 0 6px;
+    background-size: 100%;
+
+    }
+
+    .header .menu {
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        bottom: 0;
+        z-index: 3;
+        width: 100vw;
+        /*height: 100vh;*/
+        background: rgba(16, 172, 132, .92);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+    }
+
+    .menu.is-active {
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 480px){
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .project-details {
+        width: auto;
+        font-size: 14px;
+    }
+
+    .event-detail {
+        margin: 2em .5em .5em;
+        padding: 1em;
+    }
+
+    .contact {
+        height: auto;
+        padding: 1em 0;
+        text-align: center;
+        display: block;
+    }
+
+    .form-email button {
+        margin: 1em auto;
+    }
+
+    .form-email h3 {
+        margin-top: 0;
+    }
+
+    .footer {
+        display: block;
+        text-align: center;
+        border: 1px solid transparent;
+    }
+    
+}
+
+@media screen and (max-width: 320px){
+
+    h1 {
+        font-size: 1.2em;
+    }
+    .hero {
+        padding: 2em 1em;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.flexbox {
+    display: flex; /* Flexbox se refiere al tipo de display en css que permite un manejo flexible de la alineación, dimensionamiento y distribución de elementos html. */
+    /* flex-direction: column; */
+    height: 300px;
+    /* flex-wrap: nowrap; /* El nowrap define que ningun elemento caiga o baje de posición */
+    flex-wrap: wrap; /* El wrap define que los elemento caigan o baje de posición segun se achique la ventana del navegador -> -> Esto se aplica
+    con la propiedad "flex-shrink" establecido en el selector hijo*/
+    
+    /* Cuando se requiere alinear elementos con flex de forma horizontal - necesitamos la propiedad justify-content */
+    justify-content: space-around; /* Espaciado entre elementos -> Menos al inicio y al final */
+    align-items: center;
+    
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    border: 1px solid red;
+
+    flex-shrink: 0; /* para mantener el width y height definido de los elementos hijos -> Esto se aplica
+     con la propiedad "flex-wrap" establecido en el selector padre */
+
+    margin: 5px;
+}
+
+/* 
+Positions
+
+Cuando asignamos un valor a la propiedad position que no sea static (por defecto), se desbloquean 2 propiedades, 
+las cuales son z-index y (top, right, left y bottom).
+
+static: Posición que llevan todos los elementos por defecto.
+
+relative: El elemento se mueve (n) espacios desde la dirección desde vine se encontraba originalmente, 
+          salvaguardando también el espacio donde se encontraba. Cuando aplicas un valor positivo, 
+          se mueve en dirección contraria a este y viceversa.
+
+absolute: Se sale del elemento en el que se encontraba originalmente y se ubica de manera absoluta y 
+          relativa con relación al elemento mas cercano que tenga la posición relativa o por defecto 
+          con el último elemento de html (el cual puede ser body o html por defecto).
+
+fixed: Se queda fijo en un lugar especifico del viewport que se le indique.
+
+sticky: Permanece en un lugar asignado y cuando se hace scroll se queda fijo en un lugar en especifico
+        hasta que se haga scroll contrario.
+
+
+ */
