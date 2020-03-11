@@ -163,9 +163,11 @@ h2 {
   object-fit: cover;
 }
 
-.portfolio {
+.portafolio {
     background-color: #fafafa;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* La forma resumida que más van a ver respecto a los bordes es:
@@ -378,6 +380,76 @@ figure {
     text-decoration: none;
 }
 
+.code-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.code-list p {
+    margin-bottom: 0;
+}
+
+.code-image {
+    margin: 5px;
+    padding: 30px 97px;
+    background: #52c16b;
+    border-radius: 5px;
+}
+
+.code-tecnologias .code-section {
+    background: #b9b9b9;
+    max-width: 985px;
+    margin: 8px auto;
+    padding: 1px 0px;
+    border-radius: 5px;
+}
+
+.code-tecnologias .description {
+    margin: 10px 20px;
+    font-family: 'Baloo', cursive;
+    display: flex;
+    align-items: center;
+}
+
+.code-tecnologias .description .code-figure {
+    margin: auto 64px;
+    display: inherit;
+    /* overflow:hidden; */
+}
+
+.code-tecnologias .description .code-figureOtros {
+    display: inherit;
+    align-items: center;
+}
+
+.code-tecnologias .description p {
+    margin: 0 50px 0 10px;
+}
+
+.code-tecnologias .description img {
+    margin: 0 12px;
+    
+    /* filter: blur(1px); */
+}
+
+.code-tecnologias .description img:hover {
+    /* margin: 0 10px; */
+    /* visibility: hidden; */
+    /* filter: none; */
+    transition:all .5s ease-in-out;
+    -webkit-transform:scale(1.2);
+    transform:scale(1.2);
+    /* transition:all .6s ease-in-out;
+    border-radius:50%;
+    -webkit-border-radius:50%; */
+    /* box-shadow: 0px 0px 15px 15px #ec731e; */
+    /* -webkit-box-shadow: 0px 0px 15px 15px #ec731e; */
+    /* transform: rotate(360deg);
+    -webkit-transform: rotate(360deg); */
+}
+
 .contact {
     background-color: #056fff;
     color: white;
@@ -448,11 +520,11 @@ figure {
     max-width: 1030px;
     flex: 1; /* toma todo el ancho disponible que tengas dentro del elemento */
     margin: auto auto;
-    display: flex;
+    display: inherit;
     justify-content: inherit;
     align-items: inherit;
     height: inherit;
-    flex-wrap: wrap;
+    flex-wrap: inherit;
 }
 
 ol li a:hover {
