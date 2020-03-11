@@ -165,8 +165,9 @@ h2 {
 
 .portafolio {
     background-color: #fafafa;
-    padding: 20px;
+    /* padding: 20px; */
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -215,11 +216,11 @@ border-top-left-radius: 30%; */
 
     /* box-shadow: right bottom opacidad-sombra grosor-sombra; */
     /* box-shadow: 4px 4px 8px 0px #95afc0; */
-    width: 490px;
+    width: 47%;
 }
 
 .project-details{
-    width: 40%;
+    width: 45%;
     /* margin: 10px 10px; */ /*  permite centrar, separar elementos, colocar márgenes de diferentes valores (arriba, derecha, abajo e izquierda) */
 }
 
@@ -235,10 +236,10 @@ border-top-left-radius: 30%; */
 
 .project-title {
     font-size: 24px;
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin: auto;
     text-align: center;
     background: #dadada;
+    padding: 6px;
 }
 
 .project-course,
@@ -257,7 +258,7 @@ border-top-left-radius: 30%; */
 }
 
 .project-imageContainer{
-    width: 58%;
+    width: 53%;
 }
 
 .project-imageContainer img {
@@ -398,12 +399,17 @@ figure {
     border-radius: 5px;
 }
 
+/* .code-tecnologias .container-block {
+    max-width: 1030px;
+} */
+
 .code-tecnologias .code-section {
     background: #b9b9b9;
     max-width: 985px;
     margin: 8px auto;
     padding: 1px 0px;
     border-radius: 5px;
+    width: 94%;
 }
 
 .code-tecnologias .description {
@@ -638,11 +644,13 @@ ol li a:hover {
 
     .project {
         display: block;
+        width: auto;
     }
 
     .project-imageContainer{
         width: auto;
         text-align: center;
+        margin: auto;
     }
 
     .project-details {
@@ -714,6 +722,18 @@ ol li a:hover {
     }
 }
 
+@media screen and (max-width: 590px){
+
+    .code-tecnologias .description {
+        margin: 9px 14px;
+    }
+
+    .code-tecnologias .description .code-figure {
+        margin: auto 15px;
+    }
+    
+}
+
 @media screen and (max-width: 480px){
 
     h1 {
@@ -728,6 +748,10 @@ ol li a:hover {
     .event-detail {
         margin: 2em .5em .5em;
         padding: 1em;
+    }
+
+    .code-image {
+        width: 55%;
     }
 
     .contact {
@@ -749,6 +773,23 @@ ol li a:hover {
         display: block;
         text-align: center;
         border: 1px solid transparent;
+    }
+
+    .code-tecnologias .description p {
+        margin: 0 6px 0 10px;
+    }
+
+    .code-tecnologias .description img {
+        margin: 0 6px;
+    }
+
+    .code-tecnologias .description {
+        font-size: 12px;
+        margin: 7px 7px;
+    }
+
+    .code-tecnologias .description .code-figure {
+        margin: 0;
     }
     
 }
