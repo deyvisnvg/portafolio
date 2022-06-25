@@ -112,6 +112,7 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
     /*font-family: 'PT Sans', sans-serif;*/
     margin: 0;
+    background-image: linear-gradient(to top, #3d4845, #0f2d2f, #272a2a, #072b35, #323131);
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -148,7 +149,7 @@ h2 {
 
 .hero {
     height: 300px;
-    background-color: #2d2d2d;
+    /* background-color: #2d2d2d; */
     /*background-image: url('../images/hero.jpg'); /* para agregar una imagen de fondo */
     /*background-size: 500px, 300px; /* para modificar el tamaño del background asignado */
     /*background-repeat: no-repeat; /* para modificar la repetición del backgound asignado */
@@ -161,85 +162,70 @@ h2 {
 
 .hero-image {
   object-fit: cover;
+  border-radius: 7px;
 }
 
 .portafolio {
-    background-color: #fafafa;
-    /* padding: 20px; */
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    /* background-image: linear-gradient(to top, #3d4845, #021011, #3b373a, #08323d, #323131); */
+    display: grid;
+    place-content: center;
+    padding: 25px 0;
+    color: white;
 }
 
-/* La forma resumida que más van a ver respecto a los bordes es:
-Ejemplo:
-border: 3px solid black;
-Esta es la forma resumida y la que van a usar en la mayoría de los casos.
-También el border radius lo pueden usar en porcentajes tanto como en pixeles.
+.container-portafolio {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+    grid-template-columns: repeat(2, 1fr);
+    /* justify-items: center; */
+    gap: 50px 80px;
+    /* margin: 0 200px; */
+    justify-content: center;
+    width: 60vw;
+}
 
-border: 50%;
-Así harán un circulo.
-
-y por último si sólo quieren modificar una esquina del borde es siendo especifico en la zona que se desea modificar. Ejemplo:
-border-top-left-radius: 30%; */
+.container-experiencia {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(2, 1fr); */
+    gap: 40px;
+    justify-content: center;
+    width: 60vw;
+}
 
 .project {
-    /* border-top: 10px solid red;
-    border-right: 10px solid green;
-    border-left: 10px solid blue;
-    border-bottom: 10px solid yellow; */
-
-    /* border-color: #027fff;
-    border-width: 15px;
-    border-style: solid; */ /* Para establecer un solo color de borde a todos los bordes */
-
-    /*border-top-color: red;
-    border-top-width: 15px;
-    border-top-style: solid; /* Para establecer un color de borde a una posición en espe */ 
-    border: 1px solid #dadada;
     border-radius: 10px;
-/*    border-top-left-radius: 50px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 10px; */ /* Definir borde en diferentes posiciones */
-    /* es el margen que hay desde un elemento hasta los que tenga al lado. */
-    margin: 5px;
-    /* margin-bottom: 15px; */
-
-    /* La propiedad CSS padding establece el espacio de relleno requerido por todos los lados de un elemento.
-    El área de padding es el espacio entre el contenido del elemento y su borde (border) no se permiten valores negativos.
-    La propiedad padding es un atajo para evitar la asignación de cada lado por separado (padding-top, padding-right, padding-bottom, padding-left). */
     padding: 5px;
-    background: #dadada;
+    /* box-shadow: 5px 5px 15px 5px #95afc0; */
+    box-shadow: 5px 5px 10px 5px #000000;
+    /* outline: 1px solid;
 
     /* box-sizing: border-box; /* para mantener el tamaño de la caja independiente del padding o border */
 
     /* box-shadow: right bottom opacidad-sombra grosor-sombra; */
     /* box-shadow: 4px 4px 8px 0px #95afc0; */
-    width: 47%;
 }
 
-.project-details{
+/* .project-details{
     width: 45%;
-    /* margin: 10px 10px; */ /*  permite centrar, separar elementos, colocar márgenes de diferentes valores (arriba, derecha, abajo e izquierda) */
-}
+    margin: 10px 10px;
+} */
 
 .project-body {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+    gap: 10px 25px;
+    padding: 10px 20px;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 10px;
-    background: white;
-    border-radius: 10px;
 }
 
 .project-title {
     font-size: 24px;
     margin: auto;
     text-align: center;
-    background: #dadada;
+    /* background: #dadada; */
     padding: 6px;
+    border-bottom: 1px solid;
 }
 
 .project-course,
@@ -257,9 +243,9 @@ border-top-left-radius: 30%; */
     font-family: 'Fjalla One', sans-serif;
 }
 
-.project-imageContainer{
+/* .project-imageContainer{
     width: 53%;
-}
+} */
 
 .project-imageContainer img {
     max-width: 100%;
@@ -295,10 +281,6 @@ li {
     height: initial;
     margin: 14px 4px;
 }
-/* 
-.header a:hover {
-    background: #026fff;
-} */
 
 .header .menu {
     height: inherit;
@@ -333,19 +315,20 @@ figure {
 }
 
 .event-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    place-content: center;
+    /* display: flex;
+    flex-wrap: wrap; */
 }
 
 .event {
-    /*border: 1px solid red;*/
-    margin: 1%;
+    /* margin: 1%;
     width: 48%;
-    flex-shrink: 0;
-    border-radius: 10px; /* border redondo */
+    flex-shrink: 0;*/
+    border-radius: 10px; 
     overflow: hidden; /* para ocultar la esquina de la imagen y se muestre redondeado según al border-radius definido */
     background-color: #f4fbff;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 
 }
 
@@ -357,7 +340,7 @@ figure {
 }
 
 .event-list-title {
-    margin-left: 20px;
+    margin: 25px 0 10px 20px;
 }
 
 .event-detail {
@@ -399,10 +382,6 @@ figure {
     border-radius: 5px;
 }
 
-/* .code-tecnologias .container-block {
-    max-width: 1030px;
-} */
-
 .code-tecnologias .code-section {
     background: #b9b9b9;
     max-width: 985px;
@@ -436,7 +415,6 @@ figure {
 
 .code-tecnologias .description img {
     margin: 0 12px;
-    
     /* filter: blur(1px); */
 }
 
@@ -534,7 +512,7 @@ figure {
 }
 
 ol li a:hover {
-  background-color: #40739e;
+  background-color: #09aaa2;
 }
 
 .burger-button {
@@ -586,6 +564,10 @@ ol li a:hover {
     h1 {
         font-size: 2em;
         z-index: 2;
+    }
+
+    .container-portafolio {
+        width: 90vw;
     }
 }
 
@@ -720,6 +702,12 @@ ol li a:hover {
     .menu.is-active {
         left: 0;
     }
+
+    .container-portafolio {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 30px;
+        width: 85vw;
+    }
 }
 
 @media screen and (max-width: 590px){
@@ -804,63 +792,3 @@ ol li a:hover {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-.flexbox {
-    display: flex; /* Flexbox se refiere al tipo de display en css que permite un manejo flexible de la alineación, dimensionamiento y distribución de elementos html. */
-    /* flex-direction: column; */
-    height: 300px;
-    /* flex-wrap: nowrap; /* El nowrap define que ningun elemento caiga o baje de posición */
-    flex-wrap: wrap; /* El wrap define que los elemento caigan o baje de posición segun se achique la ventana del navegador -> -> Esto se aplica
-    con la propiedad "flex-shrink" establecido en el selector hijo*/
-    
-    /* Cuando se requiere alinear elementos con flex de forma horizontal - necesitamos la propiedad justify-content */
-    justify-content: space-around; /* Espaciado entre elementos -> Menos al inicio y al final */
-    align-items: center;
-    
-}
-
-.box {
-    width: 150px;
-    height: 150px;
-    border: 1px solid red;
-
-    flex-shrink: 0; /* para mantener el width y height definido de los elementos hijos -> Esto se aplica
-     con la propiedad "flex-wrap" establecido en el selector padre */
-
-    margin: 5px;
-}
-
-/* 
-Positions
-
-Cuando asignamos un valor a la propiedad position que no sea static (por defecto), se desbloquean 2 propiedades, 
-las cuales son z-index y (top, right, left y bottom).
-
-static: Posición que llevan todos los elementos por defecto.
-
-relative: El elemento se mueve (n) espacios desde la dirección desde vine se encontraba originalmente, 
-          salvaguardando también el espacio donde se encontraba. Cuando aplicas un valor positivo, 
-          se mueve en dirección contraria a este y viceversa.
-
-absolute: Se sale del elemento en el que se encontraba originalmente y se ubica de manera absoluta y 
-          relativa con relación al elemento mas cercano que tenga la posición relativa o por defecto 
-          con el último elemento de html (el cual puede ser body o html por defecto).
-
-fixed: Se queda fijo en un lugar especifico del viewport que se le indique.
-
-sticky: Permanece en un lugar asignado y cuando se hace scroll se queda fijo en un lugar en especifico
-        hasta que se haga scroll contrario.
-
-
- */
